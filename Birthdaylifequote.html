@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Life Quotes</title>
+    <style> 
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F3F3F3;
+        }
+
+        .medium-image {
+            width: 100%;
+            max-width: 390px;
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .medium-image:hover {
+            transform: scale(1.05);
+            filter: brightness(1.1);
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+            background: #fff;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-right: 10px;
+        }
+
+        .search-container input {
+            border: none;
+            padding: 5px;
+            outline: none;
+        }
+
+        .search-container button {
+            background: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .social-media a {
+            color: #fff;
+            margin: 0 5px;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .news article {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+        }
+
+        .profile-img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .author {
+            font-weight: bold;
+        }
+
+        .date-time {
+            margin-left: auto;
+            color: #999;
+        }
+
+        .news h2 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .news h3 {
+            color: #666;
+            font-size: 19px;
+            text-align: center;
+        }
+
+        .news a {
+            color: #008CBA;
+            text-decoration: none;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Responsive Styles */
+        @media screen and (max-width: 768px) {
+            .news article {
+                margin: 10px 0;
+                padding: 15px;
+            }
+
+            .news h2 {
+                font-size: 20px;
+            }
+
+            .news p {
+                font-size: 14px;
+            }
+
+            .profile-img {
+                width: 25px;
+                height: 25px;
+            }
+
+            .share-button img {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .header-container {
+                flex-direction: column;
+            }
+
+            .search-container {
+                margin-bottom: 10px;
+            }
+
+            .news article {
+                margin: 5px 0;
+                padding: 10px;
+            }
+
+            .news h2 {
+                font-size: 18px;
+            }
+
+            .news h3 {
+                font-size: 12px;
+            }
+
+            .profile-img {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        .social-media-share {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 1em;
+        }
+
+        .social-media-share li {
+            display: inline-block;
+        }
+
+        .social-media-share .share-button {
+            display: block;
+            width: 40px;
+            height: 40px;
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .social-media-share .share-button img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .social-media-share .share-button:hover {
+            transform: scale(1.1);
+            filter: brightness(1.2);
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Life Quotes</h1>
+            <div class="header-right">
+                <div class="search-container">
+                    <input type="text" placeholder="Search..">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </div>
+                <div class="social-media">
+                    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="news">
+            <article>
+                <div class="article-meta">
+                    <img class="profile-img" src="Gascony1.jpg" alt="Author's profile picture">
+                    <span class="author">Published By Lawrence Ahiamadzi</span>
+                    <div class="date-time">Published on June 18, 2024 at 10:00 AM</div>
+                </div>
+                
+                <center><img src="Born to win.jpg" class="medium-image" width="390" height="390" alt="story image 1"></center>
+                <h3>"Believe you can and you're halfway there."</h3>
+                <h3>"The only limit to our realization of tomorrow is our doubts of today."</h3>
+                <h3>"You miss 100% of the shots you don’t take."</h3>
+                <h3>"Today, I am proud to say, I was born to win."</h3>
+                <h3>"Success is not measured by what we achieve, but by the obstacles we overcome."</h3>
+                 <h3>"In the middle of difficulty lies opportunity."</h3>
+                <h3>"Your life does not get better by chance, it gets better by change."</h3>
+                <h3>"The only way to do great work is to love what you do."</h3>
+                <h3>"Happiness is not something ready made. It comes from your own actions."</h3>
+<h3>1. "The future belongs to those who believe in the beauty of their dreams."</h3>
+<h3>2. "The only limit to our realization of tomorrow is our doubts of today."</h3>
+<h3>3."You must do the thing you think you cannot do."</h3>
+  <h3>4. "The strongest soldiers get the hardest fight, and the realest people live the hardest life."</h3>
+<h3>5."Better days are on the way. Keep pushing forward, no matter how tough the journey seems."</h3>
+<h3>6."Heroes Never Give Up."</h3>
+<h3>7."Life has a way of testing us in the most difficult ways, but remember that resilience and hope can lead you to a brighter future."</h3>
+<h3>8."Your dreams are worth fighting for, and with determination and hard work, you can achieve them."</h3>
+<h3>9. "Believe in yourself and your abilities, and you'll be unstoppable."</h3>
+<h3>10. "Don't let doubts hold you back; instead, use them as fuel to drive you forward."</h3>
+<h3>11. "The power to create a better life lies within you."</h3>
+<h3>12."Every struggle is an opportunity to grow stronger and wiser."</h3>
+<h3>13."Hold on to hope, and never let it go."</h3>
+<h3>14. "You are capable of overcoming any obstacle that comes your way."</h3>
+<h3>15. "Your determination and perseverance will lead you to success."</h3>
+<h3>16."Never give up on your dreams, no matter how impossible they may seem."</h3>
+<h3>17."You are stronger than you think, braver than you feel, and smarter than you know."</h3>
+<h3>18."Life may be tough, but you are tougher."</h3>
+<h3>19. "Remember that every dark night is followed by a brighter dawn."<h3>
+<h3>20. "Keep pushing forward, and know that a better tomorrow is on its way."</h3>
+
+            </article>
+        </section>
+
+
+
+<!-- Repeat articles as needed -->
+
+ <section class="news">
+            <article>
+                <div class="article-meta">
+                    <img class="profile-img" src="Gascony1.jpg" alt="Author's profile picture">
+                    <span class="author">Published BY Lawrence Ahiamadzi</span>
+                    <div class="date-time">Published on June 18, 2024 at 10:00 AM</div>
+          
+                </div>
+                <center><img src="Gascony1.jpg" class="medium-image" width="390" height="390" alt="story image 1"></center> 
+              <h3>1."The heart of a lion is not defined by victory, but by perseverance."</h3>
+               <h3>2. "It's not about how many times you fall, but about how many times you get back up."
+ </h3>
+               <h3>3. "Winners never quit, and quitters never win."
+ </h3>
+              <h3>4. "Never give up on your dreams, no matter how impossible they may seem."
+ </h3>
+              <h3>5. "The power of perseverance can overcome any obstacle."
+ </h3>
+               <h3>6. "Every setback is an opportunity to come back stronger."
+</h3>
+               <h3>7. "Determination is the fuel that drives us towards our goals."
+</h3>
+               <h3>8. "The only way to guarantee failure is to stop trying."
+9. "Success is not final, failure is not fatal: It is the courage to continue that counts."
+</h3>
+              <h3>10. "You are stronger than you think, braver than you feel, and smarter than you know."</h3>
+<h3>11. "Don't watch life from the sidelines, participate in it."</h3>
+</h3>
+              <h3>12. "The only limit to our realization of tomorrow is our doubts of today."</h3>
+<h3>13."Believe in yourself and your abilities, and you'll be unstoppable."</h3>
+<h3>14. "The greatest glory in living lies not in never falling, but in rising every time we fall."</h3>
+
+               <h3>15. "It does not matter how slowly you go as long as you do not stop."</h3>
+<h3>16. "Life may be tough, but you are tougher."</h3>
+<h3>17. "Remember that every dark night is followed by a brighter dawn."</h3>
+<h3>18. "You miss 100% of the shots you don't take."</h3>
+<h3>19. "Keep pushing forward, and know that a better tomorrow is on its way."</h3>
+<h3>20. "The only person you need to be better than is the person you were yesterday."</h3>          
+</article>
+</section>
+
+
+<!-- Repeat articles as needed -->
+
+ <section class="news">
+            <article>
+                <div class="article-meta">
+                    <img class="profile-img" src="Gascony1.jpg" alt="Author's profile picture">
+                    <span class="author">Published BY Lawrence Ahiamadzi</span>
+                    <div class="date-time">Published on June 18, 2024 at 10:00 AM</div>
+          
+                </div>
+                <center><img src="Heroes never give up.png" class="medium-image" width="390" height="390" alt="story image 1"></center> 
+              
+              <h3>1. "Destiny can be delayed, but it can never be denied."</h3>
+              <h3>2. "Believe in your talent, and destiny will believe in you too."
+<h3>3. "With perseverance, the impossible becomes possible."</h3>
+<h3>4. "Dreams are the sparks that set the fire of destiny in motion."</h3>
+<h3>5. "Talent is a gift, but hard work is the wrapping paper that makes it a success."</h3>
+<h3>6. "The only way to guarantee failure is to stop trying."</h3>
+<h3>7. "Success is not final, failure is not fatal: It is the courage to continue that counts."</h3>
+<h3>8. "You are stronger than you think, braver than you feel, and smarter than you know."</h3>
+<h3>9. "Don't watch life from the sideline</h3>
+               <h3>10. "The only limit to our realization of tomorrow is our doubts of today."</h3>
+<h3>11. "Believe in yourself and your abilities, and you'll be unstoppable."</h3>
+<h3>12. "The greatest glory in living lies not in never falling, but in rising every time we fall."</h3>
+<h3>13. "It does not matter how slowly you go as long as you do not stop."</h3>
+<h3>14. "Life may be tough, but you are tougher."</h3>
+<h3>15. "Remember that every dark night is followed by a brighter dawn."</h3>
+<h3>16. "You miss 100% of the shots you don't take."</h3>
+<h3>17. "Keep pushing forward, and know that a better tomorrow is on its way."</h3>
+<h3>18. "The only person you need to be better than is the person you were yesterday."</h3>
+<h3>19. "The future belongs to those who believe in the beauty of their dreams."</h3>
+<h3>20. "With determination and hard work, you can turn your destiny into a masterpiece."</h3>
+
+<h4>These quotes highlight the themes of perseverance, determination, and belief in one's dreams, inspiring readers to never give up on their aspirations, even in the face of adversity.</h4>
+
+ <div class="social-share">
+                <h3>Share this post</h3>
+                <ul class="social-media-share">
+              <li>
+        <a href="https://api.whatsapp.com/send?text=Check%20out%20this%20amazing%20post!%20[Your%20URL%20here file]" class="share-button" target="_blank" rel="noopener noreferrer">
+            <img src="WhatsApp Image 2024-06-.jpg" alt="WhatsApp">
+        </a>
+    </li>
+    <li>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=[Your%20URL%20here]" class="share-button" target="_blank" rel="noopener noreferrer">
+            <img src="sm-icons-facebook-logo.png" alt="Facebook">
+        </a>
+    </li>
+    <li>
+        <a href="https://www.instagram.com/?url=[Your%20URL%20here]" class="share-button" target="_blank" rel="noopener noreferrer">
+            <img src="every-social-media-logo.png" alt="Instagram">
+        </a>
+    </li>
+    <li>
+        <a href="https://twitter.com/intent/tweet?url=[Your%20URL%20here]&text=Check%20out%20this%20amazing%20post!" class="share-button" target="_blank" rel="noopener noreferrer">
+            <img src="x-social-media-logo-icon (1).png" alt="Twitter">
+        </a>
+    </li>
+</ul>
+
+
+</article>
+</section>
+
+
+
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Life Quotes. All rights reserved.</p>
+    </footer>
+</body>
+</html>

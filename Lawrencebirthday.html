@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Homepage</title>
+    <style>
+      body {
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #222;
+    padding: 1em 0;
+    text-align: center;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    margin: 0 1em;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 2em;
+}
+
+.left, .right {
+    flex: 1;
+    margin: 1em;
+    min-width: 280px;
+}
+
+.left h2 {
+    color: #ff6b6b;
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+.left p {
+    margin-bottom: 2em;
+}
+
+.icons img {
+    width: 50px;
+    margin: 0 0.5em;
+}
+
+.right img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1em;
+}
+
+.right h3 {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+.right p {
+    margin-bottom: 1.5em;
+}
+
+.buttons button {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 0.5em 1em;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 0.5em;
+}
+
+.buttons button:hover {
+    background-color: #ff3b3b;
+}
+
+.address {
+    margin-top: 1em;
+}
+
+.social-media a {
+    color: #ff6b6b;
+    text-decoration: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left, .right {
+        margin: 1em 0;
+        min-width: 90%;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .buttons button {
+        margin-bottom: 1em;
+    }
+
+    header nav ul {
+        flex-direction: column;
+    }
+
+    header nav ul li {
+        margin: 0.5em 0;
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+       
+    </header>
+    <div class="container">
+        <div class="left">
+            <h2>EVERYBODY ARE INVITED</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <div class="icons">
+                <img src="delicious-cake-with-fruits.png" alt="Cake">
+                <img src="projector.png" alt="Projector">
+                <img src="candles.png" alt="Candles">
+                <img src="cupcake.png" alt="Cupcake">
+            </div>
+        </div>
+        <div class="right">
+            <img src="Gascony Ghb.jpg" alt="Celebration">
+            <h3>CELEBRATING QUINCEAÑERA BIRTHDAY PARTY</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <div class="buttons">
+                <button id="signInButton">Sign In</button>
+                <button id="readMoreButton">Read More</button>
+            </div>
+            <p class="address">771 Permata Kilau Regency, New York</p>
+            <div class="social-media">
+                <a href="#">Social Media</a>
+            </div>
+        </div>
+    </div>
+    <script>
+      document.getElementById('signInButton').addEventListener('click', function() {
+    alert('Sign In button clicked!');
+});
+
+document.getElementById('readMoreButton').addEventListener('click', function() {
+    alert('Read More button clicked!');
+});
+    </script>
+</body>
+</html>

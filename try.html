@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join us for a Quinceañera Birthday Party celebration. Everyone is invited!">
+    <title>Birthday Homepage</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #111;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #222;
+            padding: 1em 0;
+            text-align: center;
+        }
+
+        header nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        header nav ul li {
+            margin: 0 1em;
+            position: relative;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5em 1em;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            background-color: #ff6b6b;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 2em;
+        }
+
+        .left, .right {
+            flex: 1;
+            margin: 1em;
+            min-width: 280px;
+        }
+
+        .left h2 {
+            color: #ff6b6b;
+            font-size: 2em;
+            margin-bottom: 0.5em;
+        }
+
+        .left p {
+            margin-bottom: 2em;
+        }
+
+        .icons img {
+            width: 50px;
+            margin: 0 0.5em;
+        }
+
+        .right img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 1em;
+        }
+
+        .right h3 {
+            font-size: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        .right p {
+            margin-bottom: 1.5em;
+        }
+
+        .buttons button {
+            background-color: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 0.5em 1em;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-right: 0.5em;
+        }
+
+        .buttons button:hover {
+            background-color: #ff3b3b;
+        }
+
+        .address {
+            margin-top: 1em;
+        }
+
+        .social-media {
+            margin-top: 1em;
+        }
+
+        .social-media a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 0.5em;
+            font-size: 2em;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .social-media a:hover {
+            transform: translateY(-5px);
+            color: #ff6b6b;
+        }
+
+        /* Logged In Section Styles */
+        .logged-in {
+            background-color: #333;
+            padding: 1em;
+            border-radius: 10px;
+            margin: 1em 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .logged-in h2 {
+            color: #ff6b6b;
+            font-size: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        .logged-in p {
+            margin-bottom: 1em;
+            color: #ddd;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgb(0,0,0); 
+            background-color: rgba(0,0,0,0.4); 
+            padding-top: 60px; 
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; 
+            max-width: 600px; 
+            color: #000;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .left, .right {
+                margin: 1em 0;
+                min-width: 90%;
+            }
+
+            .buttons {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .buttons button {
+                margin-bottom: 1em;
+            }
+
+            header nav ul {
+                flex-direction: column;
+            }
+
+            header nav ul li {
+                margin: 0.5em 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Events</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="left">
+            <h2>EVERYBODY IS INVITED</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <div class="icons">
+                <img src="delicious-cake-with-fruits.png" alt="Delicious Cake with Fruits">
+                <img src="projector.png" alt="Projector">
+                <img src="candles.png" alt="Candles">
+                <img src="cupcake.png" alt="Cupcake">
+            </div>
+        </div>
+        <div class="right">
+            <img src="Gascony Ghb.jpg" alt="Celebration Image">
+            <h3>CELEBRATING QUINCEAÑERA BIRTHDAY PARTY</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <div class="buttons">
+                <button id="signInButton">Sign In</button>
+                <button id="readMoreButton">Read More</button>
+            </div>
+            <p class="address">771 Permata Kilau Regency, New York</p>
+            <div class="social-media">
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https://yourwebsite.com" target="_blank" class="fab fa-facebook-f"></a>
+                <a href="https://twitter.com/intent/tweet?text=Join us for a Quinceañera Birthday Party celebration!&url=https://yourwebsite.com" target="_blank" class="fab fa-twitter"></a>
+                <a href="https://www.instagram.com/?url=https://yourwebsite.com" target="_blank" class="fab fa-instagram"></a>
+                <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://yourwebsite.com&title=Join%20us%20for%20a%20Quinceañera%20Birthday%20Party%20celebration!" target="_blank" class="fab fa-linkedin-in"></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Logged In Section -->
+    <div class="logged-in">
+        <h2>Welcome, User!</h2>
+        <p>You are successfully logged in. Enjoy the event!</p>
+    </div>
+
+    <!-- Sign In Modal -->
+    <div id="signInModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Sign In</h2>
+            <form id="signInForm">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Sign In</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Read More Modal -->
+    <div id="readMoreModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>More About the Event</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Morbi imperdiet, mauris ac auctor dictum, nisl ligula egestas nulla, et sollicitudin sem purus in lacus. Fusce id purus. Nam quis nulla. Integer malesuada. In in enim a arcu imperdiet malesuada. Sed vel lectus. Donec odio tempus molestie, porttitor ut, iaculis quis, sem. Phasellus rhoncus. Aenean id metus id velit ullamcorper pulvinar. Suspendisse sagittis ultrices augue. Donec mi odio, faucibus at, scelerisque quis, convallis in, nisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+            <p>Praesent ut ligula non mi varius sagittis. Curabitur turpis. Integer rutrum, orci vestibulum ullamcorper ultricies, lacus quam ultricies odio, vitae placerat pede sem sit amet enim. Fusce pharetra convallis urna. Quisque ut nisi. Vestibulum eu odio. Nulla facilisi. Praesent congue erat at massa. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce id purus. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.</p>
+        </div>
+    </div>
+
+    <script>
+        // Get the modals
+        var signInModal = document.getElementById('signInModal');
+        var readMoreModal = document.getElementById('readMoreModal');
+
+        // Get the buttons that open the modals
+        var signInButton = document.getElementById('signInButton');
+        var readMoreButton = document.getElementById('readMoreButton');
+
+        // Get the <span> elements that close the modals
+        var closeButtons = document.getElementsByClassName('close');
+
+        // When the user clicks the buttons, open the modals
+        signInButton.onclick = function() {
+            signInModal.style.display = 'block';
+        }
+
+        readMoreButton.onclick = function() {
+            readMoreModal.style.display = 'block';
+        }
+
+        // When the user clicks on <span> (x), close the modals
+        for (var i = 0; i < closeButtons.length; i++) {
+            closeButtons[i].onclick = function() {
+                this.parentElement.parentElement.style.display = 'none';
+            }
+        }
+
+        // When the user clicks anywhere outside of the modals, close them
+        window.onclick = function(event) {
+            if (event.target == signInModal) {
+                signInModal.style.display = 'none';
+            }
+            if (event.target == readMoreModal) {
+                readMoreModal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join us for a Quinceañera Birthday Party celebration. Everyone is invited!">
+    <title>Birthday Homepage</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #111;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #222;
+            padding: 1em 0;
+            text-align: center;
+        }
+
+        header nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        header nav ul li {
+            margin: 0 1em;
+            position: relative;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5em 1em;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            background-color: #ff6b6b;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 2em;
+        }
+
+        .left, .right {
+            flex: 1;
+            margin: 1em;
+            min-width: 280px;
+        }
+
+        .left h2 {
+            color: #ff6b6b;
+            font-size: 2em;
+            margin-bottom: 0.5em;
+        }
+
+        .left p {
+            margin-bottom: 2em;
+        }
+
+        .icons img {
+            width: 50px;
+            margin: 0 0.5em;
+        }
+
+        .right img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 1em;
+        }
+
+        .right h3 {
+            font-size: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        .right p {
+            margin-bottom: 1.5em;
+        }
+
+        .buttons button {
+            background-color: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 0.5em 1em;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-right: 0.5em;
+        }
+
+        .buttons button:hover {
+            background-color: #ff3b3b;
+        }
+
+        .address {
+            margin-top: 1em;
+        }
+
+        .social-media {
+            margin-top: 1em;
+        }
+
+        .social-media a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 0.5em;
+            font-size: 2em;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .social-media a:hover {
+            transform: translateY(-5px);
+            color: #ff6b6b;
+        }
+
+        /* Logged In Section Styles */
+        .logged-in {
+            background-color: #333;
+            padding: 1em;
+            border-radius: 10px;
+            margin: 1em 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .logged-in h2 {
+            color: #ff6b6b;
+            font-size: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        .logged-in p {
+            margin-bottom: 1em;
+            color: #ddd;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgb(0,0,0); 
+            background-color: rgba(0,0,0,0.4); 
+            padding-top: 60px; 
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; 
+            max-width: 600px; 
+            color: #000;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .left, .right {
+                margin: 1em 0;
+                min-width: 90%;
+            }
+
+            .buttons {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .buttons button {
+                margin-bottom: 1em;
+            }
+
+            header nav ul {
+                flex-direction: column;
+            }
+
+            header nav ul li {
+                margin: 0.5em 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Events</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="left">
+            <h2>EVERYBODY IS INVITED</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <div class="icons">
+                <img src="delicious-cake-with-fruits.png" alt="Delicious Cake with Fruits">
+                <img src="projector.png" alt="Projector">
+                <img src="candles.png" alt="Candles">
+                <img src="cupcake.png" alt="Cupcake">
+            </div>
+        </div>
+        <div class="right">
+            <img src="Gascony Ghb.jpg" alt="Celebration Image">
+            <h3>CELEBRATING QUINCEAÑERA BIRTHDAY PARTY</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <div class="buttons">
+                <button id="signInButton">Sign In</button>
+                <button id="readMoreButton">Read More</button>
+            </div>
+            <p class="address">771 Permata Kilau Regency, New York</p>
+            <div class="social-media">
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https://yourwebsite.com" target="_blank" class="fab fa-facebook-f"></a>
+                <a href="https://twitter.com/intent/tweet?text=Join us for a Quinceañera Birthday Party celebration!&url=https://yourwebsite.com" target="_blank" class="fab fa-twitter"></a>
+                <a href="https://www.instagram.com/?url=https://yourwebsite.com" target="_blank" class="fab fa-instagram"></a>
+                <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://yourwebsite.com&title=Join%20us%20for%20a%20Quinceañera%20Birthday%20Party%20celebration!" target="_blank" class="fab fa-linkedin-in"></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Logged In Section -->
+    <div class="logged-in">
+        <h2>Welcome, User!</h2>
+        <p>You are successfully logged in. Enjoy the event!</p>
+    </div>
+
+    <!-- Sign In Modal -->
+    <div id="signInModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Sign In</h2>
+            <form id="signInForm">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Sign In</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Read More Modal -->
+    <div id="readMoreModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>More About the Event</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Morbi imperdiet, mauris ac auctor dictum, nisl ligula egestas nulla, et sollicitudin sem purus in lacus. Fusce id purus. Nam quis nulla. Integer malesuada. In in enim a arcu imperdiet malesuada. Sed vel lectus. Donec odio tempus molestie, porttitor ut, iaculis quis, sem. Phasellus rhoncus. Aenean id metus id velit ullamcorper pulvinar. Suspendisse sagittis ultrices augue. Donec mi odio, faucibus at, scelerisque quis, convallis in, nisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+            <p>Praesent ut ligula non mi varius sagittis. Curabitur turpis. Integer rutrum, orci vestibulum ullamcorper ultricies, lacus quam ultricies odio, vitae placerat pede sem sit amet enim. Fusce pharetra convallis urna. Quisque ut nisi. Vestibulum eu odio. Nulla facilisi. Praesent congue erat at massa. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce id purus. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.</p>
+        </div>
+    </div>
+
+    <script>
+        // Get the modals
+        var signInModal = document.getElementById('signInModal');
+        var readMoreModal = document.getElementById('readMoreModal');
+
+        // Get the buttons that open the modals
+        var signInButton = document.getElementById('signInButton');
+        var readMoreButton = document.getElementById('readMoreButton');
+
+        // Get the <span> elements that close the modals
+        var closeButtons = document.getElementsByClassName('close');
+
+        // When the user clicks the buttons, open the modals
+        signInButton.onclick = function() {
+            signInModal.style.display = 'block';
+        }
+
+        readMoreButton.onclick = function() {
+            readMoreModal.style.display = 'block';
+        }
+
+        // When the user clicks on <span> (x), close the modals
+        for (var i = 0; i < closeButtons.length; i++) {
+            closeButtons[i].onclick = function() {
+                this.parentElement.parentElement.style.display = 'none';
+            }
+        }
+
+        // When the user clicks anywhere outside of the modals, close them
+        window.onclick = function(event) {
+            if (event.target == signInModal) {
+                signInModal.style.display = 'none';
+            }
+            if (event.target == readMoreModal) {
+                readMoreModal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
+
+

@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join us for a Quinceañera Birthday Party celebration. Everyone is invited!">
+    <title>Gasconybirthday.com</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #111;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #222;
+            padding: 1em 0;
+            text-align: center;
+        }
+
+        header nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        header nav ul li {
+            margin: 0 1em;
+            position: relative;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5em 1em;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            background-color: #ff6b6b;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 2em;
+        }
+
+        .left, .right {
+            flex: 1;
+            margin: 1em;
+            min-width: 280px;
+        }
+
+        .left h2 {
+            color: #ff6b6b;
+            font-size: 2em;
+            margin-bottom: 0.5em;
+        }
+
+        .left p {
+            margin-bottom: 2em;
+        }
+
+        .icons img {
+            width: 50px;
+            margin: 0 0.5em;
+        }
+
+        .right img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 1em;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .right img:hover {
+            transform: rotateY(20deg) rotateX(20deg);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .right h3 {
+            font-size: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        .right p {
+            margin-bottom: 1.5em;
+        }
+
+        .buttons button {
+            background-color: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 0.5em 1em;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-right: 0.5em;
+        }
+
+        .buttons button:hover {
+            background-color: #ff3b3b;
+        }
+
+        .address {
+            margin-top: 1em;
+        }
+
+        .social-media {
+            margin-top: 1em;
+        }
+
+        .social-media a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 0.5em;
+            font-size: 2em;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .social-media a:hover {
+            transform: translateY(-5px);
+            color: #ff6b6b;
+        }
+
+        /* Logged In Section Styles */
+        .logged-in {
+            background-color: #333;
+            padding: 1em;
+            border-radius: 10px;
+            margin: 1em 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .logged-in h2 {
+            color: #ff6b6b;
+            font-size: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        .logged-in p {
+            margin-bottom: 1em;
+            color: #ddd;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgb(0,0,0); 
+            background-color: rgba(0,0,0,0.4); 
+            padding-top: 60px; 
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; 
+            max-width: 600px; 
+            color: #000;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .left, .right {
+                margin: 1em 0;
+                min-width: 90%;
+            }
+
+            .buttons {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .buttons button {
+                margin-bottom: 1em;
+            }
+
+            header nav ul {
+                flex-direction: column;
+            }
+
+            header nav ul li {
+                margin: 0.5em 0;
+            }
+        }
+
+
+/* Footer Styles */
+        footer {
+            background-color: #222;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        footer p {
+            margin: 0.5em 0;
+        }
+
+        footer a {
+            color: #ff6b6b;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #ff3b3b;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .left, .right {
+                margin: 1em 0;
+                min-width: 90%;
+            }
+
+            .buttons {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .buttons button {
+                margin-bottom: 1em;
+            }
+
+            header nav ul {
+                flex-direction: column;
+            }
+
+            header nav ul li {
+                margin: 0.5em 0;
+            }
+
+            footer {
+                position: relative;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    
+<h2 style="text-align: center;">
+  <marquee style="background-color: #ff00fe;">
+    <u>
+      <span style="color: #ffffff;">
+        HAPPY BIRTHDAY TO LAWRENCE AHIAMADZI A.K.A GASCONY GH
+      </span>
+    </u>
+  </marquee>
+</h2>
+
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="birthdaystory.html">Stories</a></li>
+                <li><a href="Birthdaylifequote.html">Quotes</a></li>
+                <li><a href="https://gasconysongsgh.blogspot.com">GasconyGhSongs</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="left">
+            <h2>EVERYBODY IS INVITED</h2>
+            <p>"On this special day, June 18th, 2024, we gather to celebrate the life and legacy of Lawrence Ahiamadzi, affectionately known as Gascony Gh. As we mark this milestone, we extend our warmest wishes to Lawrence for a future filled with hope, joy, and unbridled success. May all his dreams and aspirations be blessed with abundance, and may his journey be guided by love, wisdom, and prosperity.
+Happy Birthday, Lawrence! May this day be a testament to your strength and resilience, and may your life continue to inspire and uplift those around you. Remember, "Life is not measured by the number of breaths we take, but by the moments that take our breath away." May your life be full of such moments, and may you always find beauty in the journey.
+Cheers to you, Lawrence, on this remarkable day!"
+</p>
+            <div class="icons">
+                <img src="delicious-cake-with-fruits.png" alt="Delicious Cake with Fruits">
+                <img src="BirthdayProjector.jpg" alt="Projector">
+                <img src="Birthday candles.jpg" alt="Candles">
+                <img src="Birthday cake.jpg" alt="Cupcake">
+            </div>
+        </div>
+        <div class="right">
+            <img src="GasconyGhBirthday.jpg" alt="Celebration Image">
+            <h3>CELEBRATING MY BIRTHDAY ANNIVERSARY</h3>
+            <p>Happy Birthday, Lawrence Ahiamadzi! 🎉 As you blow out the candles, may each one represent a wish that comes true. This year, I hope you find yourself surrounded by opportunities that ignite your passions, moments that fill your heart with joy, and experiences that expand your horizons.
+
+Imagine all the incredible things waiting for you in the days ahead: new adventures that challenge you, connections that enrich your life, and achievements that make you proud. May your journey be as extraordinary as you are, and may you continue to inspire everyone around you with your brilliance and kindness.
+
+Here's to conquering new heights, making unforgettable memories, and living each moment to the fullest. Keep shining, keep dreaming, and keep being the incredible person you are. Happy Birthday, Lawrence! 🎂✨
+
+May your year be filled with magic and wonder, and may you always know just how special you are to all of us. Cheers to you and all the amazing things you will do!
+</p>
+            <div class="buttons">
+                <button id="signInButton">Sign In</button>
+                <button id="readMoreButton">Read More</button>
+            </div>
+            <p class="address">Nsawam-Dobro ,New Road</p>
+            <div class="social-media">
+                <a href="https://www.instagram.com/gasconysongs?igsh=MXN3YzFhaG01d3Z0OQ==" target="_blank" class="fab fa-facebook-f"></a>
+                <a href="https://x.com/YoungbloggerGh?t=dM5wJicoZZyZtRWQLqC5Ww&s=09" target="_blank" class="fab fa-twitter"></a>
+                <a href="https://www.instagram.com/gasconysongs?igsh=MXN3YzFhaG01d3Z0OQ==" target="_blank" class="fab fa-instagram"></a>
+                <a href="https://www.linkedin.com/in/gascony-songs-350471235?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="fab fa-linkedin-in"></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Logged In Section -->
+    <div class="logged-in">
+        <h2>Welcome, User!</h2>
+        <p>You are successfully logged in. Enjoy the event!</p>
+    </div>
+
+    <!-- Sign In Modal -->
+    <div id="signInModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Sign In</h2>
+            <form id="signInForm">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Sign In</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Read More Modal -->
+    <div id="readMoreModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <u><h2>More About Lawrence Ahiamadzi's Birthday Party Event</h2></u>
+            <p>As the celebration continues, the evening unfolds with more surprises and heartfelt tributes. A slideshow of cherished photos plays on a large screen, showcasing Lawrence's journey from his early days to the present. Each image tells a story of growth, perseverance, and the joy he has brought into the lives of those around him.
+        The next part of the program features a few of Lawrence's closest friends and family members sharing personal anecdotes and heartfelt messages. One by one, they take the stage to recount moments of laughter, support, and the unique ways Lawrence has touched their lives.</p>
+            <p>Their words paint a vivid picture of a man who is not only admired for his accomplishments but deeply loved for his kindness and compassion.
+    As the night progresses, a live band begins to play Lawrence's favorite songs, inviting everyone to the dance floor. The atmosphere is electric with joy and celebration, as guests dance and sing along, creating new memories that will be cherished for years to come.</p>
+        </div>
+    </div>
+
+    <script>
+        // Get the modals
+        var signInModal = document.getElementById('signInModal');
+        var readMoreModal = document.getElementById('readMoreModal');
+
+        // Get the buttons that open the modals
+        var signInButton = document.getElementById('signInButton');
+        var readMoreButton = document.getElementById('readMoreButton');
+
+        // Get the <span> elements that close the modals
+        var closeButtons = document.getElementsByClassName('close');
+
+        // When the user clicks the buttons, open the modals
+        signInButton.onclick = function() {
+            signInModal.style.display = 'block';
+        }
+
+        readMoreButton.onclick = function() {
+            readMoreModal.style.display = 'block';
+        }
+
+        // When the user clicks on <span> (x), close the modals
+        for (var i = 0; i < closeButtons.length; i++) {
+            closeButtons[i].onclick = function() {
+                this.parentElement.parentElement.style.display = 'none';
+            }
+        }
+
+        // When the user clicks anywhere outside of the modals, close them
+        window.onclick = function(event) {
+            if (event.target == signInModal) {
+                signInModal.style.display = 'none';
+            }
+            if (event.target == readMoreModal) {
+                readMoreModal.style.display = 'none';
+            }
+        }
+    </script>
+
+
+  <footer>
+        <p>&copy; 2024 Lawrence Ahiamadzi-Gascony Gh. All rights reserved.</p>
+        <p>Connect with us on <a href="https://www.facebook.com/profile.php?id=100079212926298">Facebook</a>, <a href="https://x.com/YoungbloggerGh?t=dM5wJicoZZyZtRWQLqC5Ww&s=09">Twitter</a>, <a href="https://www.instagram.com/gasconysongs?igsh=MXN3YzFhaG01d3Z0OQ==">Instagram</a>, <a href="https://www.linkedin.com/in/gascony-songs-350471235?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">LinkedIn</a></p>
+    </footer>   
+</body>
+</html>
+

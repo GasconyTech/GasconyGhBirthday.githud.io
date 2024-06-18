@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join us for a Quinceañera Birthday Party celebration. Everyone is invited!">
+    <title>Birthday Homepage</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #111;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #222;
+            padding: 1em 0;
+            text-align: center;
+        }
+
+        header nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        header nav ul li {
+            margin: 0 1em;
+            position: relative;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5em 1em;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            background-color: #ff6b6b;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 2em;
+        }
+
+        .left, .right {
+            flex: 1;
+            margin: 1em;
+            min-width: 280px;
+        }
+
+        .left h2 {
+            color: #ff6b6b;
+            font-size: 2em;
+            margin-bottom: 0.5em;
+        }
+
+        .left p {
+            margin-bottom: 2em;
+        }
+
+        .icons img {
+            width: 50px;
+            margin: 0 0.5em;
+        }
+
+        .right img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 1em;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .right img:hover {
+            transform: rotateY(20deg) rotateX(20deg);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .right h3 {
+            font-size: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        .right p {
+            margin-bottom: 1.5em;
+        }
+
+        .buttons button {
+            background-color: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 0.5em 1em;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-right: 0.5em;
+        }
+
+        .buttons button:hover {
+            background-color: #ff3b3b;
+        }
+
+        .address {
+            margin-top: 1em;
+        }
+
+        .social-media {
+            margin-top: 1em;
+        }
+
+        .social-media a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 0.5em;
+            font-size: 2em;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .social-media a:hover {
+            transform: translateY(-5px);
+            color: #ff6b6b;
+        }
+
+        /* Logged In Section Styles */
+        .logged-in {
+            background-color: #333;
+            padding: 1em;
+            border-radius: 10px;
+            margin: 1em 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .logged-in h2 {
+            color: #ff6b6b;
+            font-size: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        .logged-in p {
+            margin-bottom: 1em;
+            color: #ddd;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgb(0,0,0); 
+            background-color: rgba(0,0,0,0.4); 
+            padding-top: 60px; 
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; 
+            max-width: 600px; 
+            color: #000;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #222;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        footer p {
+            margin: 0.5em 0;
+        }
+
+        footer a {
+            color: #ff6b6b;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #ff3b3b;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .left, .right {
+                margin: 1em 0;
+                min-width: 90%;
+            }
+
+            .buttons {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .buttons button {
+                margin-bottom: 1em;
+            }
+
+            header nav ul {
+                flex-direction: column;
+            }
+
+            header nav ul li {
+                margin: 0.5em 0;
+            }
+
+            footer {
+                position: relative;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2><marquee style="background-color: #ff00fe;"><u><span style="color: #ffa400;">HAPPY BIRTHDAY TO LAWRENCE AHIAMADZI A.K.A GASCONY GH</span></u></marquee></h2>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Stories</a></li>
+                <li><a href="#">Quotes</a></li>
+                <li><a href="#">Gascony Gh Tech</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="left">
+            <h2>EVERYBODY IS INVITED</h2>
+            <p>"On this special day, June 18th, 2024, we gather to celebrate the life and legacy of Lawrence Ahiamadzi, affectionately known as Gascony Gh. As we mark this milestone, we extend our warmest wishes to Lawrence for a future filled with hope, joy, and unbridled success. May all his dreams and aspirations be blessed with abundance, and may his journey be guided by love, wisdom, and prosperity.
+Happy Birthday, Lawrence! May this day be a testament to your strength and resilience, and may your life continue to inspire and uplift those around you. Remember, "Life is not measured by the number of breaths we take, but by the moments that take our breath away." May your life be full of such moments, and may you always find beauty in the journey.
+Cheers to you, Lawrence, on this remarkable day!"
+            </p>
+            <div class="icons">
+                <img src="delicious-cake-with-fruits.png" alt="Delicious Cake with Fruits">
+                <img src="BirthdayProjector.jpg" alt="Projector">
+                <img src="Birthday candles.jpg" alt="Candles">
+                <img src="Birthday cake.jpg" alt="Cupcake">
+            </div>
+        </div>
+        <div class="right">
+            <img src="GasconyGhBirthday.jpg" alt="Celebration Image">
+            <h3>CELEBRATING MY BIRTHDAY ANNIVERSARY</h3>
+            <p>Happy Birthday, Lawrence Ahiamadzi! 🎉 As you blow out the candles, may each one represent a wish that comes true. This year, I hope you find yourself surrounded by opportunities that ignite your passions, moments that fill your heart with joy, and experiences that expand your horizons.
+
+Imagine all the incredible things waiting for you in the days ahead: new adventures that challenge you, connections that enrich your life, and achievements that make you proud. Remember, life is a journey meant to be embraced fully, so take bold steps towards your dreams and cherish every moment along the way.
+
+Wishing you a year ahead filled with boundless possibilities, love, and laughter. Your strength and resilience inspire everyone around you, and I have no doubt that this year will be one of your best yet. Happy Birthday!</p>
+            <div class="buttons">
+                <button>Join Event</button>
+                <button>Send Gift</button>
+            </div>
+            <div class="address">
+                <h3>Event Location:</h3>
+                <p>123 Celebration St., Joy City</p>
+            </div>
+            <div class="social-media">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Lawrence Ahiamadzi - Gascony Gh. All rights reserved.</p>
+        <p>Connect with us on <a href="https://www.facebook.com/gasconygh">Facebook</a>, <a href="https://twitter.com/gasconygh">Twitter</a>, <a href="https://instagram.com/gasconygh">Instagram</a>, <a href="https://linkedin.com/in/gasconygh">LinkedIn</a></p>
+    </footer>
+</body>
+</html>
